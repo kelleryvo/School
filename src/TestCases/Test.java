@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import Paint.Brush;
 
 public class Test {
-
+	//Yvo was here!
 	@org.junit.Test
 	public void testBrushGetColour() {
 		Brush b1 = new Brush(1,254,255, 81);
