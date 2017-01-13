@@ -36,6 +36,8 @@ public class Control {
 		//print(trx.setColour());
 		
 		trx = new ColourFull(255,255,255);
+		
+		
 	}
 	
 	public static void print(Object content){
