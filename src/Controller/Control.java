@@ -1,6 +1,16 @@
 package Controller;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JToolBar;
+import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
 import Paint.Brush;
@@ -49,11 +59,28 @@ public class Control {
 	}
 	
     private static void createAndShowGUI() {
-        System.out.println("Created GUI on EDT? "+
-        SwingUtilities.isEventDispatchThread());
-        JFrame f = new JFrame("Swing Paint Demo");
+        System.out.println("Created GUI on EDT? " + SwingUtilities.isEventDispatchThread());
+        JFrame f = new JFrame("Paint");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         f.add(new MyPanel());
+        
+        JMenuBar menu = new JMenuBar();
+        menu.add(new JMenu("Datei"));
+        
+        
+        JMenuItem submenu = new JMenuItem("A text-only menu item");
+        menu.add(submenu);
+        
+        f.setJMenuBar(menu);
+        
+        JToolBar tbar = new JToolBar();
+        tbar.setSize(800, 20);
+        tbar.add(new JButton("Drehen"));
+        tbar.add(new JButton("Verkleinern"));
+        tbar.add(new JButton("Vergrößern"));
+        
+        f.add(tbar, BorderLayout.PAGE_START);
+        
         f.pack();
         f.setVisible(true);
     } 
