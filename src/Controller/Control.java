@@ -36,8 +36,8 @@ public class Control {
 		//print(trx.setColour());
 		
 		trx = new ColourFull(255,255,255);
-		//Test
-		
+		//Test 7jad
+		 
 	}
 	
 	public static void print(Object content){
