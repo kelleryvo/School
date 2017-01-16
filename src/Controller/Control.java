@@ -1,5 +1,8 @@
 package Controller;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 import Paint.Brush;
 import Paint.Colour;
 import Paint.ColourFull;
@@ -38,32 +41,20 @@ public class Control {
 		trx = new ColourFull(255,255,255);
 		//Test 7jad
 		 
+		createAndShowGUI();
 	}
 	
 	public static void print(Object content){
 		System.out.println(content);
 	}
 	
-	//Ueberladung von Methoden
-	public static void countOverload(int start){
-		while(start<100){
-			start++;
-			print(start);
-		}
-	}
-	
-	public static void countOverload(int start, int end){
-		while(start<end){
-			start++;
-			print(start);
-		}
-	}
-	
-	public static void countOverload(int start, String text){
-		print(text);
-		while(start<100){
-			start++;
-			print(start);
-		}
-	}
+    private static void createAndShowGUI() {
+        System.out.println("Created GUI on EDT? "+
+        SwingUtilities.isEventDispatchThread());
+        JFrame f = new JFrame("Swing Paint Demo");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        f.add(new MyPanel());
+        f.pack();
+        f.setVisible(true);
+    } 
 }
