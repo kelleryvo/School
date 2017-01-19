@@ -51,7 +51,9 @@ public class Control {
 		trx = new ColourFull(255,255,255);
 		//Test 7jad
 		 
-		createAndShowGUI();
+		//createAndShowGUI();
+		
+		new Paint.DrawingGUI();
 	}
 	
 	public static void print(Object content){
