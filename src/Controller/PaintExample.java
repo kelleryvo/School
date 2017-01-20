@@ -432,6 +432,7 @@ public class PaintExample extends JFrame{
 	        
 	        private class ListenForSlider implements ChangeListener{
 	        	
+	        	
 	        	// Called when the spinner is changed
 	        	
 	        	public void stateChanged(ChangeEvent e) {
