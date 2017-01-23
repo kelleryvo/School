@@ -19,6 +19,12 @@ import java.util.Iterator;
 
 import javax.swing.JComponent;
 
+/**
+ * 
+ * @author Schaeppi und Keller
+ * @version 1.0
+ *
+ */
 public class DrawingBoard extends JComponent {
 
 	// ArrayLists that contain each shape drawn along with

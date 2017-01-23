@@ -61,7 +61,6 @@ public class Control {
 	 *
 	 * @param	content  	an Object with the value to print.
 	 * @return  void
-	 * @result  console 	Console-Output of given Content
 	 */
 	public static void print(Object content){
 		System.out.println(content);

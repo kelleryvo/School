@@ -1,5 +1,11 @@
 package Paint;
 
+/**
+ * 
+ * @author Schaeppi und Keller
+ * @version 1.0
+ *
+ */
 public class ColourTransparency extends Colour {
 
 	private double transparency;

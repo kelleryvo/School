@@ -1,5 +1,11 @@
 package Paint;
 
+/**
+ * 
+ * @author Schaeppi und Keller
+ * @version 1.0
+ *
+ */
 public abstract class Pen implements Draw{
 	private Colour colour;
 	private double thickness;

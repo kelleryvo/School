@@ -24,6 +24,12 @@ import javax.swing.SpinnerNumberModel;
 
 import Listeners.ListenForSlider;
 
+/**
+ * 
+ * @author Schaeppi und Keller
+ * @version 1.0
+ *
+ */
 public class DrawingGUI extends JFrame{
 	
 	JButton btnBrush, btnLine, btnEllipse, btnRectangle, btnBorderColor, btnFillColor;

@@ -1,5 +1,11 @@
 package Paint;
 
+/**
+ * 
+ * @author Schaeppi und Keller
+ * @version 1.0
+ *
+ */
 public class Pencil extends Pen {
 	
 	//Constructor

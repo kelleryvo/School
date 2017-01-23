@@ -10,6 +10,12 @@ import java.awt.geom.*;
 import java.text.DecimalFormat;
 import java.util.*;
 
+/**
+ * 
+ * @author Schaeppi und Keller
+ * @version 1.0
+ *
+ */
 public class PaintExample extends JFrame{
 			JButton brushBut, lineBut, ellipseBut, rectBut, strokeBut, fillBut;
 			

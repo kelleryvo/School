@@ -3,6 +3,12 @@ package Listeners;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+/**
+ * 
+ * @author Schaeppi und Keller
+ * @version 1.0
+ *
+ */
 public class ListenForSlider implements ChangeListener{
 	
 	// Called when the spinner is changed
