@@ -8,6 +8,13 @@ package Paint;
  */
 public class ColourFull extends Colour {
 
+	/**
+	 * Gets the RGB from the Superclass
+	 *
+	 * @param	red 	The red color of RBG-Code
+	 * @param	green 	The green color of RBG-Code
+	 * @param	blue 	The blue color of RBG-Code
+	 */
 	public ColourFull(int red, int green, int blue) {
 		super(red, green, blue);
 	}
@@ -21,6 +28,12 @@ public class ColourFull extends Colour {
 		return true;
 	}*/
 
+	/**
+	 * Gets the full RGB-Code
+	 *
+	 * @param	getColour()		A String with the full RGB-Code
+	 * @return	RGB-Code
+	 */
 	@Override
 	public String getColour() {
 		return "rgb("+getRed() + ", " + getGreen() + ", " + getBlue()+")";
