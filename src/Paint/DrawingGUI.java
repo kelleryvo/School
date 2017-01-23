@@ -28,7 +28,7 @@ public class DrawingGUI extends JFrame{
 	
 	JButton btnBrush, btnLine, btnEllipse, btnRectangle, btnBorderColor, btnFillColor;
 	JLabel lblTransparency;
-	JSlider transSlider;
+	static JSlider transSlider;
 	
 	DecimalFormat dec = new DecimalFormat("#.##");
 	static Graphics2D graphSettings;
@@ -128,7 +128,7 @@ public class DrawingGUI extends JFrame{
     
     //GET & SET
 
-	public JSlider getTransSlider() {
+	public static JSlider getTransSlider() {
 		return transSlider;
 	}
 

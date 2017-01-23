@@ -56,6 +56,13 @@ public class Control {
 		new Paint.DrawingGUI();
 	}
 	
+	/**
+	 * Prints a given value as Object
+	 *
+	 * @param	content  	an Object with the value to print.
+	 * @return  void
+	 * @result  console 	Console-Output of given Content
+	 */
 	public static void print(Object content){
 		System.out.println(content);
 	}

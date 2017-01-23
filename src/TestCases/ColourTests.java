@@ -20,7 +20,7 @@ public class ColourTests {
 	@Test
 	public void testCreateTransparencyColour() {
 		ColourTransparency c1 = new ColourTransparency(254,255,0, 0.7);
-		assertEquals(c1.getRed(), 254);
+		assertEquals(c1.getTransparency(), 0.7, 0.0f);
 	}
 	
 	@Test
