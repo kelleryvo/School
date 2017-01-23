@@ -31,10 +31,11 @@ public class DrawingGUI extends JFrame{
 	JSlider transSlider;
 	
 	DecimalFormat dec = new DecimalFormat("#.##");
-	Graphics2D graphSettings;
-	int currentActionType = 1;
-	float transparentVal = 1.0f;
-	Color strokeColor=Color.BLACK, fillColor=Color.BLACK;
+	static Graphics2D graphSettings;
+	static int currentActionType = 1;
+	static float transparentVal = 1.0f;
+	static Color strokeColor=Color.BLACK;
+	static Color fillColor=Color.BLACK;
 
 	//Konstruktor
 	public DrawingGUI(){
@@ -44,7 +45,7 @@ public class DrawingGUI extends JFrame{
         this.setTitle("Drawing Board");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        //Panel und Box für Buttons
+        //Panel und Box fï¿½r Buttons
         JPanel paButtons = new JPanel();
         Box boButtons = Box.createHorizontalBox();
         
@@ -57,7 +58,7 @@ public class DrawingGUI extends JFrame{
         btnBorderColor = createButton("./src/img/border.png", 5, true);
         btnFillColor = createButton("./src/img/Fill.png", 6, false);
         
-        //Buttons zu der Box hinzufügen
+        //Buttons zu der Box hinzufuegen
         boButtons.add(btnBrush);
         boButtons.add(btnLine);
         boButtons.add(btnEllipse);
@@ -74,7 +75,7 @@ public class DrawingGUI extends JFrame{
         boButtons.add(lblTransparency);
         boButtons.add(getTransSlider());
         
-        //Button Box zu Panel hinzufügen
+        //Button Box zu Panel hinzufuegen
         paButtons.add(boButtons);        
         this.add(paButtons, BorderLayout.SOUTH);
         
@@ -134,8 +135,39 @@ public class DrawingGUI extends JFrame{
 	public void setTransSlider(JSlider transSlider) {
 		this.transSlider = transSlider;
 	}
-	
-	public int getCurrentActionType(){
+	//CurrentActionType
+	public static int getCurrentActionType(){
 		return currentActionType;
+	}
+	public static void setCurrentActionType(int currentActionType){
+		DrawingGUI.currentActionType= currentActionType;
+	}
+	//GraphSettings
+	public static Graphics2D getGraphSettings(){
+		return graphSettings;
+	}
+	public static void setGraphSettings(Graphics2D graphSettings){
+		DrawingGUI.graphSettings = graphSettings;
+	}
+	//StrokeColor
+	public static Color getStrokeColor(){
+		return strokeColor;
+	}
+	public static void setStrokeColor(Color strokeColor){
+		DrawingGUI.strokeColor = strokeColor;
+	}
+	//FillColor
+	public static Color getFillColor(){
+		return fillColor;
+	}
+	public static void setFillColor(Color fillColor){
+		DrawingGUI.fillColor = fillColor;
+	}
+	//TransparentVal
+	public static float getTransparentVal(){
+		return transparentVal;
+	}
+	public static void setTransparentVal(float transparentVal){
+		DrawingGUI.transparentVal = transparentVal;
 	}
 }

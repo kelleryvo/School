@@ -53,22 +53,22 @@ public class DrawingBoard extends JComponent {
 
 			public void mouseReleased(MouseEvent e) {
 
-				if (currentAction != 1) {
+				if (Paint.DrawingGUI.getCurrentActionType() != 1) {
 
 					// Create a shape using the starting x & y
 					// and finishing x & y positions
 
 					Shape aShape = null;
 
-					if (currentAction == 2) {
+					if (Paint.DrawingGUI.getCurrentActionType() == 2) {
 						aShape = drawLine(drawStart.x, drawStart.y, e.getX(), e.getY());
 					} else
 
-					if (currentAction == 3) {
+					if (Paint.DrawingGUI.getCurrentActionType() == 3) {
 						aShape = drawEllipse(drawStart.x, drawStart.y, e.getX(), e.getY());
 					} else
 
-					if (currentAction == 4) {
+					if (Paint.DrawingGUI.getCurrentActionType() == 4) {
 
 						// Create a new rectangle using x & y coordinates
 
@@ -78,12 +78,12 @@ public class DrawingBoard extends JComponent {
 					// Add shapes, fills and colors to there ArrayLists
 
 					shapes.add(aShape);
-					shapeFill.add(fillColor);
-					shapeStroke.add(strokeColor);
+					shapeFill.add(Paint.DrawingGUI.getFillColor());
+					shapeStroke.add(Paint.DrawingGUI.getStrokeColor());
 
 					// Add transparency value to ArrayList
 
-					transPercent.add(transparentVal);
+					transPercent.add(Paint.DrawingGUI.getTransparentVal());
 
 					drawStart = null;
 					drawEnd = null;
@@ -103,7 +103,7 @@ public class DrawingBoard extends JComponent {
 
 				// If this is a brush have shapes go on the screen quickly
 
-				if (currentAction == 1) {
+				if (Paint.DrawingGUI.getCurrentActionType() == 1) {
 
 					int x = e.getX();
 					int y = e.getY();
@@ -113,17 +113,17 @@ public class DrawingBoard extends JComponent {
 					// Make stroke and fill equal to eliminate the fact that
 					// this is an ellipse
 
-					strokeColor = fillColor;
+					Paint.DrawingGUI.setStrokeColor(Paint.DrawingGUI.getFillColor());
 
 					aShape = drawBrush(x, y, 5, 5);
 
 					shapes.add(aShape);
-					shapeFill.add(fillColor);
-					shapeStroke.add(strokeColor);
+					shapeFill.add(Paint.DrawingGUI.getFillColor());
+					shapeStroke.add(Paint.DrawingGUI.getStrokeColor());
 
 					// Add the transparency value
 
-					transPercent.add(transparentVal);
+					transPercent.add(Paint.DrawingGUI.getTransparentVal());
 				}
 
 				// Get the final x & y position after the mouse is dragged
@@ -136,16 +136,16 @@ public class DrawingBoard extends JComponent {
 
 	public void paint(Graphics g) {
 		// Class used to define the shapes to be drawn
-
-		graphSettings = (Graphics2D) g;
+		
+		Paint.DrawingGUI.setGraphSettings((Graphics2D) g);
 
 		// Antialiasing cleans up the jagged lines and defines rendering rules
 
-		graphSettings.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+		Paint.DrawingGUI.getGraphSettings().setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
 		// Defines the line width of the stroke
 
-		graphSettings.setStroke(new BasicStroke(4));
+		Paint.DrawingGUI.getGraphSettings().setStroke(new BasicStroke(4));
 
 		// Iterators created to cycle through strokes and fills
 		Iterator<Color> strokeCounter = shapeStroke.iterator();
@@ -159,47 +159,47 @@ public class DrawingBoard extends JComponent {
 
 			// Sets the shapes transparency value
 
-			graphSettings.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, transCounter.next()));
+			Paint.DrawingGUI.getGraphSettings().setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, transCounter.next()));
 
 			// Grabs the next stroke from the color arraylist
-			graphSettings.setPaint(strokeCounter.next());
+			Paint.DrawingGUI.getGraphSettings().setPaint(strokeCounter.next());
 
-			graphSettings.draw(s);
+			Paint.DrawingGUI.getGraphSettings().draw(s);
 
 			// Grabs the next fill from the color arraylist
-			graphSettings.setPaint(fillCounter.next());
+			Paint.DrawingGUI.getGraphSettings().setPaint(fillCounter.next());
 
-			graphSettings.fill(s);
+			Paint.DrawingGUI.getGraphSettings().fill(s);
 		}
 
 		// Guide shape used for drawing
 		if (drawStart != null && drawEnd != null) {
 			// Makes the guide shape transparent
 
-			graphSettings.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.40f));
+			Paint.DrawingGUI.getGraphSettings().setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.40f));
 
 			// Make guide shape gray for professional look
 
-			graphSettings.setPaint(Color.LIGHT_GRAY);
+			Paint.DrawingGUI.getGraphSettings().setPaint(Color.LIGHT_GRAY);
 
 			Shape aShape = null;
 
-			if (currentAction == 2) {
+			if (Paint.DrawingGUI.getCurrentActionType() == 2) {
 				aShape = drawLine(drawStart.x, drawStart.y, drawEnd.x, drawEnd.y);
 			} else
 
-			if (currentAction == 3) {
+			if (Paint.DrawingGUI.getCurrentActionType() == 3) {
 				aShape = drawEllipse(drawStart.x, drawStart.y, drawEnd.x, drawEnd.y);
 			} else
 
-			if (currentAction == 4) {
+			if (Paint.DrawingGUI.getCurrentActionType() == 4) {
 
 				// Create a new rectangle using x & y coordinates
 
 				aShape = drawRectangle(drawStart.x, drawStart.y, drawEnd.x, drawEnd.y);
 			}
 
-			graphSettings.draw(aShape);
+			Paint.DrawingGUI.getGraphSettings().draw(aShape);
 		}
 	}
 

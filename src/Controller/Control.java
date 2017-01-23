@@ -60,7 +60,10 @@ public class Control {
 		System.out.println(content);
 	}
 	
+    /*
     private static void createAndShowGUI() {
+     
+     
         System.out.println("Created GUI on EDT? " + SwingUtilities.isEventDispatchThread());
         JFrame f = new JFrame("Paint");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
@@ -86,4 +89,5 @@ public class Control {
         f.pack();
         f.setVisible(true);
     } 
+    */
 }
