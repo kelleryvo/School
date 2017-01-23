@@ -8,6 +8,15 @@ package Paint;
  */
 public class Pencil extends Pen {
 	
+	/**
+	 * The Penil for Drawing
+	 *
+	 * @param	thickness	Thickness of the Pencil
+	 * @param	red			Red of RGB
+	 * @param	green		Green of RGB
+	 * @param	blue		Blue of RBG
+	 * 
+	 */
 	//Constructor
 	public Pencil(double thickness, int red, int green, int blue) {
 		super(thickness, red,green, blue);

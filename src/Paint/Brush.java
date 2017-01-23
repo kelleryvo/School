@@ -7,6 +7,15 @@ package Paint;
  *
  */
 public class Brush extends Pen {
+	/**
+	 * The Brush for Drawing
+	 *
+	 * @param	thickness	Thickness of the Brush
+	 * @param	red			Red of RGB
+	 * @param	green		Green of RGB
+	 * @param	blue		Blue of RBG
+	 * 
+	 */
 	//Constructor
 	public Brush(double thickness, int red, int green, int blue) {
 		super(thickness, red, green, blue);

@@ -43,6 +43,19 @@ public class DrawingGUI extends JFrame{
 	static Color strokeColor=Color.BLACK;
 	static Color fillColor=Color.BLACK;
 
+	/**
+	 * ---
+	 *
+	 * @param	paButtons
+	 * @param	boButtons
+	 * @param	btnBrush
+	 * @param	btnLine
+	 * @param	btnEllipse
+	 * @param	btnRectangle
+	 * @param	btnBorderColor
+	 * @param	btnFillColor
+	 * @param	lblTransparency
+	 */
 	//Konstruktor
 	public DrawingGUI(){
 		
@@ -92,6 +105,16 @@ public class DrawingGUI extends JFrame{
         this.setVisible(true); 
 	}
 	
+	/**
+	 * ---
+	 *
+	 * @param	createButton
+	 * @param	but
+	 * @param	dim
+	 * @param	butIcon
+	 * 
+	 * @return but
+	 */
     public JButton createButton(String sIconPath, int iActionType){
     	JButton but = new JButton();
     	Dimension dim = new Dimension(50, 50);
@@ -111,6 +134,14 @@ public class DrawingGUI extends JFrame{
         return but;  
     }
     
+    /**
+	 * ---
+	 *
+	 * @param	theBut
+	 * @param	butIcon
+	 * 
+	 * @return theBut
+	 */
     public JButton createButton(String iconFile, final int actionNum, final boolean stroke){
     	JButton theBut = new JButton();
         Icon butIcon = new ImageIcon(iconFile);

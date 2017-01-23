@@ -10,6 +10,15 @@ public abstract class Pen implements Draw{
 	private Colour colour;
 	private double thickness;
 	
+	/**
+	 * The Pen for Drawing
+	 *
+	 * @param	thickness	Thickness of the Pen
+	 * @param	red			Red of RGB
+	 * @param	green		Green of RGB
+	 * @param	blue		Blue of RBG
+	 * 
+	 */
 	//Constructor
 	public Pen(double thickness, int red, int green, int blue){
 		this.colour = new ColourFull(red,green,blue);

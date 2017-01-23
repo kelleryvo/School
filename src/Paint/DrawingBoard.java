@@ -38,7 +38,13 @@ public class DrawingBoard extends JComponent {
 	Point drawStart, drawEnd;
 
 	// Monitors events on the drawing area of the frame
-
+	
+	/**
+	 * Defines the start and end point
+	 *
+	 * @param	drawStart 		Start point for drawing shapes
+	 * @param	drawEnd			End point for drawing shapes
+	 */
 	public DrawingBoard() {
 
 		this.addMouseListener(new MouseAdapter() {
